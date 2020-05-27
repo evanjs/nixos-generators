@@ -96,6 +96,16 @@ while [[ $# -gt 0 ]]; do
       nix_args+=(-I "$2")
       shift
       ;;
+    -s | --argstr)
+      nix_args+=(--argstr "$2" "$3")
+      shift
+      shift
+      ;;
+    -a | --arg)
+      nix_args+=(--arg "$2" "$3")
+      shift
+      shift
+      ;;
     *)
       abort "unknown option $1"
       ;;
